@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/my_books_background"
+    android:padding="40dp"
+    tools:context="br.edu.ifsp.mybooks.activities.MainActivity">
+
+    <ImageView
+        android:id="@+id/logoMyBooksLogin"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/my_books_logo" />
+
+    <TextView
+        android:id="@+id/textMyBooksLogin"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/logoMyBooksLogin"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="myBooks"
+        android:textColor="@color/colorWhite"
+        android:textSize="40dp" />
+
+    <EditText
+        android:id="@+id/usernameLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textMyBooksLogin"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@color/colorWhite"
+        android:drawableLeft="@drawable/icon_user"
+        android:hint="Usuário"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:textSize="22dp" />
+
+    <EditText
+        android:id="@+id/passwLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/usernameLogin"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/colorWhite"
+        android:drawableLeft="@drawable/icon_password"
+        android:hint="Senha"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:textSize="22dp" />
+
+    <ImageView
+        android:id="@+id/buttonLogin"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/passwLogin"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/button_go" />
+
+    <TextView
+        android:id="@+id/doesntHaveAccount"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@+id/buttonLogin"
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        android:text="Não possui uma conta ainda?"
+        android:textColor="@color/colorWhite"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/doesntHaveAccount"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="Registre-se"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18dp" />
+
+</RelativeLayout>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,14 +11,67 @@
         android:id="@+id/goBackButtonDetails"
         android:layout_width="15dp"
         android:layout_height="32dp"
-        android:src="@drawable/icon_back"/>
+        android:src="@drawable/icon_back" />
 
     <ImageView
         android:id="@+id/bookImageDetails"
-        android:layout_margin="30dp"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:layout_below="@+id/goBackButtonDetails"
-        android:layout_width="30dp"
-        android:layout_height="32dp"
-        android:src="@drawable/my_books_background"/>
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/my_books_background" />
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/bookRateDetails"
+        android:layout_marginTop="15dp"
+        android:text="Muito bom"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center"
+        android:layout_below="@id/bookImageDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/bookTitleDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bookRateDetails"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="As crônicas de Gelo e Fogo: A tormenta de Espadas - Livro Três"
+        android:textColor="@color/colorAccent"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/bookAuthorDetails"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/bookTitleDetails"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:gravity="center"
+        android:fontFamily="sans-serif-light"
+        android:layout_marginBottom="15dp"
+        android:text="George R. R. Martin"/>
+
+    <TextView
+        android:id="@+id/bookCommentaryLabelDetails"
+        android:layout_width="match_parent"
+        android:layout_below="@id/bookAuthorDetails"
+        android:text="Comentários"
+        android:textSize="16dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/bookCommentariesDetails"
+        android:layout_below="@+id/bookCommentaryLabelDetails"
+        android:layout_width="match_parent"
+        android:textColor="@color/colorAccent"
+        android:textSize="14dp"
+        android:fontFamily="sans-serif-light"
+        android:text="lorem ipsum bal bla bal ablbab la lba balab ab la lb alb lab lab lab l lab lba lab lab  ab lab lab lab l lab "
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

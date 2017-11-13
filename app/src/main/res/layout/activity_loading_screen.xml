@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="40dp"
+    android:background="@drawable/my_books_background"
+    tools:context="br.edu.ifsp.mybooks.activities.LoadingScreenActivity">
+
+    <ImageView
+        android:id="@+id/logoMyBooksLoading"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/my_books_logo" />
+
+    <ProgressBar
+        android:id="@+id/progressBarLoading"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:backgroundTint="@color/colorWhite"
+        android:layout_below="@+id/logoMyBooksLoading"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

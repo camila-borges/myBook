@@ -50,6 +50,7 @@
         android:backgroundTint="@color/colorWhite"
         android:drawableLeft="@drawable/icon_password"
         android:hint="Senha"
+        android:inputType="textPassword"
         android:textColor="@color/colorWhite"
         android:textColorHint="@color/colorWhite"
         android:textSize="22dp" />

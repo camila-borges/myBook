@@ -25,7 +25,7 @@ public class LoadingScreenActivity extends AppCompatActivity {
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                for (int i = 1; i <= 100; i++){
+                for (int i = 1; i <= 100; i+=5){
                     final int value = i;
                     try {
                         Thread.sleep(100);

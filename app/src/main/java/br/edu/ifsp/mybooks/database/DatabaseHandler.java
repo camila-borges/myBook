@@ -30,21 +30,21 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_USERS_TABLE = "CREATE TABLE" + TABLE_USUARIOS + "("
-            + KEY_ID + "INTEGER PRIMARY KEY, " + KEY_EMAIL + "TEXT,"
-            + KEY_SENHA + "TEXT" + ")";
+        String CREATE_USERS_TABLE = "CREATE TABLE " + TABLE_USUARIOS + "("
+            + KEY_ID + " INTEGER PRIMARY KEY, " + KEY_EMAIL + " TEXT, "
+            + KEY_SENHA + " TEXT" + ")";
         db.execSQL(CREATE_USERS_TABLE);
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS" + TABLE_USUARIOS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_USUARIOS);
 
         onCreate(db);
     }
 
-    void addUser(Usuario usuario){
+    public void addUsuario(Usuario usuario){
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -55,12 +55,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    Usuario getUsuario(int id){
+    public Usuario getUsuario(int id){
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_USUARIOS, new String[] { KEY_ID,
-            KEY_EMAIL, KEY_SENHA}, KEY_ID + "=?",
-            new String[] {String.valueOf(id)}, null, null, null, null);
+                        KEY_EMAIL, KEY_SENHA}, KEY_ID + " = ?",
+                new String[] {String.valueOf(id)}, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
 
@@ -77,13 +77,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_EMAIL, usuario.getEmail());
         values.put(KEY_SENHA, usuario.getSenha());
 
-        return db.update(TABLE_USUARIOS, values, KEY_ID + "=?",
+        return db.update(TABLE_USUARIOS, values, KEY_ID + " = ?",
                 new String[]{ String.valueOf(usuario.getId()) });
     }
 
     public void deleteUsuario(Usuario usuario){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_USUARIOS, KEY_ID + " = ? ",
+        db.delete(TABLE_USUARIOS, KEY_ID + " = ?",
                 new String[]{ String.valueOf(usuario.getId()) });
         db.close();
     }

@@ -1,12 +1,9 @@
 package br.edu.ifsp.mybooks.model;
 
-import com.googlecode.objectify.annotation.Entity;
-
 /**
  * Created by Camila on 12/11/2017.
  */
 
-@Entity
 public class Usuario {
 
     private int id;

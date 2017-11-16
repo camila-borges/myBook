@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context="br.edu.ifsp.mybooks.activities.CreateBookActivity">
+
+    <TextView
+        android:id="@+id/LabelCreateBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="CADASTRO DE LIVRO"
+        android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/goBackButtonCreateBook"
+        android:layout_width="15dp"
+        android:layout_height="32dp"
+        android:src="@drawable/icon_back" />
+
+    <EditText
+        android:id="@+id/BookNameCreateBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LabelCreateBook"
+        android:layout_marginTop="20dp"
+        android:hint="Nome do Livro*" />
+
+    <EditText
+        android:id="@+id/BookAuthorCreateBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/BookNameCreateBook"
+        android:layout_marginTop="20dp"
+        android:hint="Autor do Livro" />
+
+    <EditText
+        android:id="@+id/TextAreaDescriptionCreateBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/BookAuthorCreateBook"
+        android:inputType="textMultiLine"
+        android:lines="6"
+        android:overScrollMode="always"
+        android:scrollHorizontally="false"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
+        android:text="Descrição do Livro*"
+        android:textColor="@color/colorAccent" />
+
+    <RadioGroup
+        android:id="@+id/RadioGroupCreateBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextAreaDescriptionCreateBook">
+
+        <TextView
+            android:text="Qualidade do conteúdo*"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="8dp"
+            android:id="@+id/LabelQualityCreateBook"
+            android:textSize="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:text="Ruim"
+            android:id="@+id/RadioButtonBadCreateBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:text="Médio"
+            android:id="@+id/RadioButtonMediumCreateBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/RadioButtonGoodCreateBook"
+            android:text="Bom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/RadioButtonVeryGoodCreateBook"
+            android:text="Muito bom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+
+
+</RelativeLayout>

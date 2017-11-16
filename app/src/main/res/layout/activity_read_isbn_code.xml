@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context="br.edu.ifsp.mybooks.activities.ReadIsbnCodeActivity">
+
+    <TextView
+        android:id="@+id/WriteLabelIsbn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="Buscar por código ISBN"
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/goBackButtonIsbn"
+        android:layout_width="15dp"
+        android:layout_height="32dp"
+        android:src="@drawable/icon_back" />
+
+    <EditText
+        android:id="@+id/WriteBookIsbn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/WriteLabelIsbn"
+        android:layout_marginTop="20dp"
+        android:hint="Código ISBN" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/WriteBookIsbn"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:id="@+id/ButtonRegisterManuallyIsbn"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginRight="10dp"
+            android:background="#e8e8e8"
+            android:fontFamily="sans-serif-black"
+            android:padding="10dp"
+            android:text="Registro manual"
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/ButtonDoneIsbn"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/ButtonRegisterManuallyIsbn"
+            android:background="#e8e8e8"
+            android:fontFamily="sans-serif-black"
+            android:padding="10dp"
+            android:text="Confirmar"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

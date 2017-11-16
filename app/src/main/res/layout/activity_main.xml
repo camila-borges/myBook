@@ -37,6 +37,7 @@
         android:backgroundTint="@color/colorWhite"
         android:drawableLeft="@drawable/icon_user"
         android:hint="Usuário"
+        android:maxLines="1"
         android:textColor="@color/colorWhite"
         android:textColorHint="@color/colorWhite"
         android:textSize="22dp" />
@@ -51,6 +52,7 @@
         android:drawableLeft="@drawable/icon_password"
         android:hint="Senha"
         android:inputType="textPassword"
+        android:maxLines="1"
         android:textColor="@color/colorWhite"
         android:textColorHint="@color/colorWhite"
         android:textSize="22dp" />

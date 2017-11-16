@@ -31,8 +31,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_USERS_TABLE = "CREATE TABLE " + TABLE_USUARIOS + "("
-            + KEY_ID + " INTEGER PRIMARY KEY, " + KEY_EMAIL + " TEXT, "
-            + KEY_SENHA + " TEXT" + ")";
+            + KEY_ID + " INTEGER PRIMARY KEY, " + KEY_EMAIL + " TEXT unique not null, "
+            + KEY_SENHA + " TEXT not null" + ")";
         db.execSQL(CREATE_USERS_TABLE);
 
     }
@@ -61,6 +61,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         Cursor cursor = db.query(TABLE_USUARIOS, new String[] { KEY_ID,
                         KEY_EMAIL, KEY_SENHA}, KEY_ID + " = ?",
                 new String[] {String.valueOf(id)}, null, null, null, null);
+        if (cursor != null)
+            cursor.moveToFirst();
+
+        Usuario usuario = new Usuario(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2));
+
+        return usuario;
+    }
+
+    public Usuario getUsuario(String email){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.query(TABLE_USUARIOS, new String[] { KEY_ID,
+                        KEY_EMAIL, KEY_SENHA}, KEY_EMAIL + " = ?",
+                new String[] {String.valueOf(email)}, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
 

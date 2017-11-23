@@ -3,11 +3,16 @@ package br.edu.ifsp.mybooks.activities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.sembozdemir.booksapi.library.BooksApi;
+import com.sembozdemir.booksapi.library.ItemCallback;
+import com.sembozdemir.booksapi.library.models.Item;
 
 import br.edu.ifsp.mybooks.R;
 import br.edu.ifsp.mybooks.database.DatabaseHandler;
@@ -47,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Usuario usuario = dh.getUsuario(email.getText().toString());
 
-                if (usuario.getSenha().equals(passw.getText().toString())){
+                if (usuario.getSenha().equals(passw.getText().toString())) {
                     //Fazer login
                     userSingleton = UserSingleton.getUserSingleton();
                     userSingleton.user = usuario;
@@ -59,12 +64,26 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        //https://github.com/sembozdemir/BooksApiJavaWrapper
+        BooksApi booksApi = BooksApi.create("AIzaSyCQXgCdrMuyqHU21GXm3v0vtt-5dw0uWrk");
+        booksApi.getBookForIsbn("9788551002391", new ItemCallback() {
+            @Override
+            public void onSuccess(Item item) {
+                Log.v("Livro", item.getVolumeInfo().getTitle());
+            }
+
+            @Override
+            public void onFailure(Throwable throwable) {
+                // handle exception
+            }
+        });
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        if(userSingleton.user != null){
+        if (userSingleton.user != null) {
             finish();
         }
     }

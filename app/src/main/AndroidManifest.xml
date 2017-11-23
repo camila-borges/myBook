@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.edu.ifsp.mybooks">
 
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -27,5 +29,9 @@
         <activity android:name=".activities.ReadIsbnCodeActivity" />
         <activity android:name=".activities.CreateBookActivity"></activity>
     </application>
+
+    <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyCQXgCdrMuyqHU21GXm3v0vtt-5dw0uWrk" />
 
 </manifest>

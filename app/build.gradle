@@ -25,8 +25,11 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
         exclude group: 'com.google.code.findbugs'
     })
+    compile 'com.github.sembozdemir:BooksApiJavaWrapper:1.0.0'
     compile 'com.google.apis:google-api-services-books:v1-rev93-1.23.0'
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile group: 'com.google.api-client', name: 'google-api-client', version: '1.23.0'
+    compile group: 'com.google.api-client', name: 'google-api-client-android', version: '1.23.0'
     testCompile 'junit:junit:4.12'
 }

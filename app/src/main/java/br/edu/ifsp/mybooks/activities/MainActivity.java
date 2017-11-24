@@ -65,19 +65,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //https://github.com/sembozdemir/BooksApiJavaWrapper
-        BooksApi booksApi = BooksApi.create("AIzaSyCQXgCdrMuyqHU21GXm3v0vtt-5dw0uWrk");
-        booksApi.getBookForIsbn("9788551002391", new ItemCallback() {
-            @Override
-            public void onSuccess(Item item) {
-                Log.v("Livro", item.getVolumeInfo().getTitle());
-            }
-
-            @Override
-            public void onFailure(Throwable throwable) {
-                // handle exception
-            }
-        });
     }
 
     @Override

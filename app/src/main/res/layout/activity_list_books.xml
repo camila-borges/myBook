@@ -25,4 +25,11 @@
         android:layout_alignRight="@+id/searchBookList"
         android:src="@drawable/icon_search" />
 
+    <Button
+        android:id="@+id/bttonadd"
+        android:layout_below="@id/searchBookIconList"
+        android:text="Adicionar livro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    
 </RelativeLayout>

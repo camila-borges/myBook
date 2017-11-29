@@ -110,12 +110,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_BOOKS, new String[] { KEY_BOOK_ID,
-                        KEY_BOOK_NAME, KEY_BOOK_DESCRIPTION, KEY_BOOK_AUTHOR, KEY_BOOK_QUALITY, KEY_BOOK_USER, KEY_BOOK_IMAGEM}, KEY_BOOK_ID + " = ?",
+                        KEY_BOOK_NAME, KEY_BOOK_AUTHOR, KEY_BOOK_DESCRIPTION, KEY_BOOK_QUALITY, KEY_BOOK_USER, KEY_BOOK_IMAGEM}, KEY_BOOK_ID + " = ?",
                 new String[] {String.valueOf(id)}, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
 
-        Livro livro = new Livro(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
+        Livro livro = new Livro(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(6));
 
         return livro;
     }

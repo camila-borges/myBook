@@ -59,7 +59,7 @@
         android:id="@+id/bookCommentaryLabelDetails"
         android:layout_width="match_parent"
         android:layout_below="@id/bookAuthorDetails"
-        android:text="Comentários"
+        android:text="Descrição"
         android:textSize="16dp"
         android:layout_marginBottom="10dp"
         android:layout_height="wrap_content" />

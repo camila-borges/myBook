@@ -54,7 +54,6 @@ public class CreateBookActivity extends AppCompatActivity {
         }
 
         final String imagem = intent.getStringExtra("imagem");
-        Toast.makeText(this, imagem, Toast.LENGTH_SHORT).show();
 
         confirmRegister.setOnClickListener(new View.OnClickListener() {
             @Override

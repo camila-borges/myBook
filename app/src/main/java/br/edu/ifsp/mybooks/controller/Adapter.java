@@ -63,7 +63,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         holder.livroPicImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //AQUI VOCE COLOCA O QUE QUER FAZER QUANDO CLICAR NUMA IMAGEM DE LIVRO
                 Intent intent = new Intent(context, ViewBookDetailActivity.class);
                 intent.putExtra("livroId", livro.getId());
                 context.startActivity(intent);

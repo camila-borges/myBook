@@ -8,7 +8,7 @@
     <ImageView
         android:id="@+id/livroPicImageView"
         android:layout_width="96dp"
-        android:layout_height="96dp"
+        android:layout_height="140dp"
         android:layout_marginBottom="10dp" />
 
     <TextView

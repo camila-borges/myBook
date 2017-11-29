@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.util.ExceptionCatchingInputStream;
 import com.sembozdemir.booksapi.library.BooksApi;
 import com.sembozdemir.booksapi.library.ItemCallback;
 import com.sembozdemir.booksapi.library.models.Item;
@@ -49,24 +50,24 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseHandler dh = new DatabaseHandler(MainActivity.this);
+                try {
+                    DatabaseHandler dh = new DatabaseHandler(MainActivity.this);
 
-                Usuario usuario = dh.getUsuario(email.getText().toString());
+                    Usuario usuario = dh.getUsuario(email.getText().toString());
 
-                if (usuario.getSenha().equals(passw.getText().toString())) {
-                    //Fazer login
-                    userSingleton = UserSingleton.getUserSingleton();
-                    userSingleton.user = usuario;
+                    if (usuario.getSenha().equals(passw.getText().toString())) {
+                        //Fazer login
+                        userSingleton = UserSingleton.getUserSingleton();
+                        userSingleton.user = usuario;
 
-//                    Livro x = dh.getLivro(1);
-//
-//                    Toast.makeText(MainActivity.this, x.getNome(), Toast.LENGTH_SHORT).show();
-
-                    Intent intent = new Intent(MainActivity.this, ListBooksActivity.class);
-                    finish();
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(MainActivity.this, "Informações inválidas!", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(MainActivity.this, ListBooksActivity.class);
+                        finish();
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(MainActivity.this, "Informações inválidas!", Toast.LENGTH_LONG).show();
+                    }
+                } catch (Exception e){
+                    Toast.makeText(MainActivity.this, "Ocorreu um erro, verifique os dados inseridos", Toast.LENGTH_SHORT).show();
                 }
             }
         });

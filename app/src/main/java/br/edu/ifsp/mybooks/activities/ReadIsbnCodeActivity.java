@@ -73,8 +73,6 @@ public class ReadIsbnCodeActivity extends AppCompatActivity {
             }
         });
 
-        //https://github.com/sembozdemir/BooksApiJavaWrapper
-
     }
 
 }

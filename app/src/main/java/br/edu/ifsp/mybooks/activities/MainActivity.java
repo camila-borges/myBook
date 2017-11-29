@@ -16,6 +16,7 @@ import com.sembozdemir.booksapi.library.models.Item;
 
 import br.edu.ifsp.mybooks.R;
 import br.edu.ifsp.mybooks.database.DatabaseHandler;
+import br.edu.ifsp.mybooks.model.Livro;
 import br.edu.ifsp.mybooks.model.Usuario;
 import br.edu.ifsp.mybooks.singleton.UserSingleton;
 
@@ -56,6 +57,11 @@ public class MainActivity extends AppCompatActivity {
                     //Fazer login
                     userSingleton = UserSingleton.getUserSingleton();
                     userSingleton.user = usuario;
+
+//                    Livro x = dh.getLivro(1);
+//
+//                    Toast.makeText(MainActivity.this, x.getNome(), Toast.LENGTH_SHORT).show();
+
                     Intent intent = new Intent(MainActivity.this, ListBooksActivity.class);
                     finish();
                     startActivity(intent);

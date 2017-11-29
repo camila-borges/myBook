@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import br.edu.ifsp.mybooks.R;
 import br.edu.ifsp.mybooks.database.DatabaseHandler;
@@ -52,6 +53,9 @@ public class CreateBookActivity extends AppCompatActivity {
             descrpBook.setText(intent.getStringExtra("bookDescription"));
         }
 
+        final String imagem = intent.getStringExtra("imagem");
+        Toast.makeText(this, imagem, Toast.LENGTH_SHORT).show();
+
         confirmRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,6 +86,7 @@ public class CreateBookActivity extends AppCompatActivity {
                 livro.setId_user(usuarioLogado);
                 livro.setAutor(autor);
                 livro.setDescricao(descricao);
+                livro.setImagem(imagem);
 
                 dh.addLivro(livro);
 

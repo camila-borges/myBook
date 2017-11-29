@@ -21,15 +21,22 @@
         android:id="@+id/searchBookIconList"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:padding="3dp"
         android:layout_alignRight="@+id/searchBookList"
+        android:padding="3dp"
         android:src="@drawable/icon_search" />
 
     <Button
         android:id="@+id/bttonadd"
-        android:layout_below="@id/searchBookIconList"
-        android:text="Adicionar livro"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchBookIconList"
+        android:text="Adicionar livro" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/bttonadd"
+        android:layout_marginTop="10dp"></android.support.v7.widget.RecyclerView>
+
 </RelativeLayout>

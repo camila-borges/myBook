@@ -42,6 +42,7 @@ public class ReadIsbnCodeActivity extends AppCompatActivity {
                 booksApi.getBookForIsbn(isbnToSearch, new ItemCallback() {
                     @Override
                     public void onSuccess(Item item) {
+                        String imagem = item.getVolumeInfo().getImageLinks().getThumbnail();
                         String bookTitle = item.getVolumeInfo().getTitle();
                         String bookDescription = item.getSearchInfo().getTextSnippet();
                         List<String> bookAuthor = item.getVolumeInfo().getAuthors();
@@ -51,6 +52,7 @@ public class ReadIsbnCodeActivity extends AppCompatActivity {
                         intent.putExtra("bookDescription", bookDescription);
                         intent.putExtra("fromIsbn", true);
                         intent.putExtra("bookAuthor", bookAuthor.get(0));
+                        intent.putExtra("imagem", imagem);
 
                         startActivity(intent);
                     }

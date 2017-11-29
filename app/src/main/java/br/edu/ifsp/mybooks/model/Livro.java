@@ -11,25 +11,28 @@ public class Livro {
     private String autor;
     private String descricao;
     private String qualidade;
+    private String imagem;
 
     public Livro() {
     }
 
-    public Livro(int id, int id_user, String nome, String autor, String descricao, String qualidade){
+    public Livro(int id, int id_user, String nome, String autor, String descricao, String qualidade, String imagem){
         this.id = id;
         this.id_user = id_user;
         this.nome = nome;
         this.autor = autor;
         this.descricao = descricao;
         this.qualidade = qualidade;
+        this.imagem = imagem;
     }
 
-    public Livro(int id_user, String nome, String autor, String descricao, String qualidade){
+    public Livro(int id_user, String nome, String autor, String descricao, String qualidade, String imagem){
         this.id_user = id_user;
         this.nome = nome;
         this.autor = autor;
         this.descricao = descricao;
         this.qualidade = qualidade;
+        this.imagem = imagem;
     }
 
     public int getId() {
@@ -59,4 +62,12 @@ public class Livro {
     public String getQualidade() { return qualidade; }
 
     public void setQualidade(String qualidade) { this.qualidade = qualidade; }
+
+    public String getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
+    }
 }

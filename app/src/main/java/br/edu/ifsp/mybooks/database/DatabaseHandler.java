@@ -32,6 +32,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_BOOK_NAME = "name";
     private static final String KEY_BOOK_AUTHOR = "author";
     private static final String KEY_BOOK_QUALITY = "quality";
+    private static final String KEY_BOOK_IMAGEM = "imagem";
 
     private static final String KEY_ID = "id";
     private static final String KEY_EMAIL = "email";
@@ -50,7 +51,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         String CREATE_BOOKS_TABLE = "CREATE TABLE " + TABLE_BOOKS + "("
                 + KEY_BOOK_ID + " INTEGER PRIMARY KEY, " + KEY_BOOK_NAME + " TEXT unique not null, "
                 + KEY_BOOK_DESCRIPTION + " TEXT not null, " + KEY_BOOK_AUTHOR + " TEXT not null, "
-                + KEY_BOOK_QUALITY + " TEXT not null, " + KEY_BOOK_USER + " INTEGER, "
+                + KEY_BOOK_QUALITY + " TEXT not null, " + KEY_BOOK_USER + " INTEGER, " + KEY_BOOK_IMAGEM + " TEXT, "
                 + " FOREIGN KEY ("+KEY_BOOK_USER+") REFERENCES "+TABLE_USUARIOS+" ("+KEY_ID+"));";
 
         db.execSQL(CREATE_USERS_TABLE);
@@ -85,6 +86,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_BOOK_AUTHOR, livro.getAutor());
         values.put(KEY_BOOK_QUALITY, livro.getQualidade());
         values.put(KEY_BOOK_USER, livro.getId_user());
+        values.put(KEY_BOOK_IMAGEM, livro.getImagem());
 
         db.insert(TABLE_BOOKS, null, values);
         db.close();
@@ -108,12 +110,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_BOOKS, new String[] { KEY_BOOK_ID,
-                        KEY_BOOK_NAME, KEY_BOOK_DESCRIPTION, KEY_BOOK_AUTHOR, KEY_BOOK_QUALITY, KEY_BOOK_USER}, KEY_BOOK_ID + " = ?",
+                        KEY_BOOK_NAME, KEY_BOOK_DESCRIPTION, KEY_BOOK_AUTHOR, KEY_BOOK_QUALITY, KEY_BOOK_USER, KEY_BOOK_IMAGEM}, KEY_BOOK_ID + " = ?",
                 new String[] {String.valueOf(id)}, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
 
-        Livro livro = new Livro(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4));
+        Livro livro = new Livro(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
 
         return livro;
     }
@@ -136,13 +138,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_BOOKS, new String[] { KEY_BOOK_ID,
-                        KEY_BOOK_NAME, KEY_BOOK_DESCRIPTION, KEY_BOOK_AUTHOR, KEY_BOOK_QUALITY, KEY_BOOK_USER}, KEY_BOOK_NAME
+                        KEY_BOOK_NAME, KEY_BOOK_DESCRIPTION, KEY_BOOK_AUTHOR, KEY_BOOK_QUALITY, KEY_BOOK_USER, KEY_BOOK_IMAGEM}, KEY_BOOK_NAME
                         + " = ?",
                 new String[] {String.valueOf(nome)}, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
 
-        Livro livro = new Livro(Integer.parseInt(cursor.getString(0)), Integer.parseInt(cursor.getString(1)), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
+        Livro livro = new Livro(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
 
         return livro;
     }
@@ -165,6 +167,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 livro.setAutor(cursor.getString(3));
                 livro.setQualidade(cursor.getString(4));
                 livro.setId_user(Integer.parseInt(cursor.getString(5)));
+                livro.setImagem(cursor.getString(6));
 
                 // Adding to list
                 livroList.add(livro);

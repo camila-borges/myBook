@@ -2,8 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.edu.ifsp.mybooks">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyCQXgCdrMuyqHU21GXm3v0vtt-5dw0uWrk" />
 
     <application
         android:allowBackup="true"
@@ -28,11 +32,11 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".activities.CreateUserActivity" />
         <activity android:name=".activities.ReadIsbnCodeActivity" />
-        <activity android:name=".activities.CreateBookActivity"></activity>
+        <activity android:name=".activities.CreateBookActivity" />
+        <activity
+            android:name=".activities.MenuActivity"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
-
-    <meta-data
-        android:name="com.google.android.geo.API_KEY"
-        android:value="AIzaSyCQXgCdrMuyqHU21GXm3v0vtt-5dw0uWrk" />
 
 </manifest>

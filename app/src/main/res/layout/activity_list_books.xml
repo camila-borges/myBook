@@ -10,33 +10,38 @@
     <EditText
         android:id="@+id/searchBookList"
         android:layout_width="match_parent"
-        android:layout_height="25dp"
+        android:layout_height="30dp"
         android:background="#ededed"
         android:hint="pesquisar"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:textColorHint="@color/colorAccent" />
+        android:textColorHint="@color/colorAccent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageView
         android:id="@+id/searchBookIconList"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_alignRight="@+id/searchBookList"
-        android:padding="3dp"
-        android:src="@drawable/icon_search" />
+        android:padding="4dp"
+        android:src="@drawable/icon_search"
+        android:layout_alignBottom="@+id/searchBookList"
+        android:layout_alignParentTop="true" />
 
-    <Button
-        android:id="@+id/bttonadd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/searchBookIconList"
-        android:text="Adicionar livro" />
+    <!--<Button-->
+        <!--android:id="@+id/bttonadd"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/searchBookIconList"-->
+        <!--android:text="Adicionar livro" />-->
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/bttonadd"
+        android:layout_below="@id/searchBookIconList"
         android:layout_marginTop="10dp"></android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>
